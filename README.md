@@ -97,7 +97,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 146.LRU缓存机制|Medium|$O(1)$|哈希表|No|使用有序字典来实现
 148.排序链表|Medium|$O(nlogn)$|链表、排序|Done|先放在一个数组里面排序，然后重新生成链表
 152.乘积最大子序列|Medium|$O(n^3)$|数组|No|$fmax(i) = max(fmax(i-1)*num[i], fmin(i-1)*num[i], num[i]),fmin(i) = min(fmax(i-1)*num[i], min(i-1)*num[i], num[i])$
-153.寻找旋转排序数组中的最小值|Medium|$O(logn)$|数组，二分查找|Done|二分查找不断更新值
+153.寻找旋转排序数组中的最小值|Medium|$O(logn)$|数组，二分查找|No|mid和right比较，截止条件是left<right
 154.寻找旋转排序数组中的最小值 II|Hard|$O(logn)$|数组、二分查找|Done|和上述类似，只需考虑重复值
 155.最小栈|Easy|$O(1)$|栈|Done|建立辅助栈,每次保存新元素和已知元素
 160.相交链表|Easy|$O(m+n)$|链表|Done|长链表先走，然后再一起走
