@@ -1,3 +1,6 @@
+### Introduction：
+关于LeetCode的计时，真的有点迷，还是主要看复杂度，不要过度关注计时吧。
+
 ### 刷题链接：
 leetcode中文网：https://leetcode-cn.com/  
 leetcode英文网：https://leetcode.com/   
@@ -113,7 +116,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 201.数字范围按位与|Easy|$O(n)$|位运算|No|发现二进制的规律
 202.快乐数|Easy|  |哈希表、数组|No|1-4之间只有1是快乐数，>4的非快乐数都会进入4或者3的循环序列
 204.计算质数|Easy|$O(n)$|哈希表、数学|No|设置质数数组，然后让质数的倍数为False
-206.反转链表|Easy|$O(n)$|链表|Done|依次翻转
+206.反转链表|Easy|$O(n)$|链表|No|修改原链表的结点指向，然后赋值给目标结点
 207.课程表|Medium|$O(E+V)$|图|No|拓扑排序
 208.前缀树|Medium|$O(n)$|二叉树|No|字典实现这种数据结构
 215.数组中的第K个最大的元素|Medium|$O(n)$|数组、堆|Done|利用最小堆实现
@@ -123,7 +126,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 220.存在重复元素III|Medium|$O(n)$|桶排序|No|复杂度达不到要求
 221.最大正方形|Medium|$O(mn)$|DP|No|dp[i][j] = min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]) + 1
 225.用队列实现栈|Easy|O(n)|队列、栈|No|将队列前面的元素依次出队，然后放在新元素的后面
-226.翻转二叉树|Easy|$O(n)$|二叉树、递归|Done|递归翻转
+226.翻转二叉树|Easy|$O(n)$|二叉树、递归|Done|交换左右子树，然后对左右子树递归   
 229.求众数II|Medium|$O(n)$|数组、排序、哈希表|Done|哈希表统计次数
 230.二叉搜索树中第k小的元素|Medium|$O(n)$|二叉树、dfs|Done|中序遍历，得到排序数组
 231.2的幂|Easy|$log(n)$|数学|Done|依次除以2，直到不能整除，判断最后是否是1
@@ -131,7 +134,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 234.回文链表|Easy|$O(n)$|链表、指针|Done|转成数组然后判断是否是回文数组
 235.二叉搜索树的最低公共祖先|Easy|$O(n)$|二叉树、dfs|No|判断p，q是否在根节点和左右子树出现过
 236.二叉树的最低公共祖先|Medium|$O(n)$|二叉树，dfs|No|求以node为根结点的子树是否出现过两个结点
-237.删除链表中的结点|Easy|$O(1)$|链表|Done|val和next分别赋值
+237.删除链表中的结点|Easy|$O(1)$|链表|Done|鬼题目，只需分别对val和next赋值
 238.除自身以外数组的乘积|Medium|$O(n)$|数组|Done|左右分别累乘，注意边界值
 239.滑动窗口最大值|Hard|$O(n)$|数组、堆、队列|No|最优解不会
 240.搜索二维矩阵II|Medium|$O(m+n)$|数组、二分查找|Done|从左上遍历到右下
