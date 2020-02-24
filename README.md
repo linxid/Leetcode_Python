@@ -9,7 +9,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 ### 刷题记录：
 题目|难度|时间复杂度|类型|完成度|方法
 --|--|--|--|--|--
-1.两数之和|Easy|$O(n)$|数组、哈希表|Done|保存字典，判断差是否在字典中出现过，注意索引
+1.两数之和|Easy|$O(n)$|数组、哈希表|Done|key为数，value为index保存字典，判断差是否在字典中出现过
 2.两数相加|Medium|$O(m+n)$|链表|No|模拟加法的实现，注意进位
 3.无重复字符的最长子串|Medium|$O(n)$|字符串|No|字典保存字符位置，判断是否在字典中出现过
 4.两个有序数组的中位数|Medium|$O(log(m+n))$|数学|No|二分法，依次删除不满足条件的k/2个值
@@ -47,7 +47,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 49.子母异位词分组|Medium|$O(nk)$|哈希表|No|将排序后字符串或统计次数作为key，相同的字符串保存对应key的list中
 50.Pow(x,n)|Medium|$O(logn)$|二分查找|Done|递归求解，修改函数参数而不是对函数返回值累乘
 53.最大子序列和|Easy|$O(n)$|数组、动态规划|Done|$f(n) = max(f(n-1)+nums[n], nums[n])$
-54.螺旋矩阵|Medium|$O(mn)$|数组|No|方向数组，每次判断是否满足条件，转变方向，di+1，否则一直持续同一个方向
+54.螺旋矩阵|Medium|$O(mn)$|数组|No|迭代m*n次，方向数组控制遍历方向，保存已经遍历过的点坐标
 55.跳跃游戏|Medium|$O(n)$|贪心、数字|Done|每次获取当前步所能到达的最远距离
 56.合并区间|Medium|$O(nlogn)$|排序、数组|No|按start排序，然后根据是否重叠拼接
 59.螺旋矩阵II|Medium|$O(n^2)$|数组|Done|方向指针，主要是方向的判断，顺时针遍历
@@ -63,7 +63,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 76.最小覆盖子串|Hard|$O(m+n)$|滑窗法|No|移动左右窗口边界
 77.组合|Medium| |回溯|Done|类似17题，套用回溯模板
 78.子集|Medium| |回溯（递归）|No|依然是回溯的写法吧
-79.单词搜索|Medium|  |回溯|No|遍历每一个点，然后将其作为字符串的起点进行回溯
+79.单词搜索|Medium|  |回溯，dfs|No|遍历每一个点，然后将其作为字符串的起点进行dfs回溯
 84.柱状图中最大的矩形|Hard|$O(n)$|栈|No|每次用栈只保存递增序列
 88.合并两个有序数组|Easy|$O(m+n)$|归并|Done|归并思想，依次选择较小的元素进行拼接
 90.子集II|Medium|  |回溯|Done|回溯模板，判断重复，需要进行剪枝
@@ -73,13 +73,14 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 98.验证二叉搜索树|Medium|$O(n)$|树、DFS|No|中序遍历，判断是否满足递增序列
 100.相同的树|Easy|$O(n)$|树、递归|Done|递归遍历判断每一个结点是否相同
 101.对称二叉树|Easy|$O(n)$|二叉树|No|递归判断左右子树是否相等
-102.二叉树的层次遍历|Medium|$O(n)$|二叉树、队列、BFS|Done|建立一个队列然后BFS遍历
+102.二叉树的层次遍历|Medium|$O(n)$|二叉树、队列、BFS|Done|分层遍历，循环遍历当前层的所有结点
 103.二叉树的锯齿形层次遍历|Medium|$O(n)$|DFS、二叉树、队列|Done|相比上一题增加一个奇偶的判断
 104.二叉树的最大深度|Easy|$O(n)$|二叉树、递归|Done|递归遍历结点，求左右子树的深度
 105.从前序与中序遍历序列构造二叉树|Medium|$O(n)$|二叉树、递归，DFS|Done|先获取根结点，然后对左右子树递归调用
 106.从中序与后序遍历序列构造二叉树|Medium|$O(n)$|二叉树、递归，DFS|Done|同上，主要是中序遍历和后序遍历的识别
 108.将有序数组转换为二叉搜索树|Medium|$O(n)$|二叉树、递归|Done|先得到根节点，然后左右子树遍历生成
 110.平衡二叉树|Easy|$O(n^2)$|二叉树、递归，DFS|Done|判断每个结点左右子树的深度差是否小于1
+111.二叉树的最小深度|Easy|$O(n)$|二叉树、迭代、BFS|Done|类似分层遍历，左右子树均不存在时返回树深
 112.路径总和|Easy|$O(n)$|二叉树、迭代、递归|No|遍历每一个结点，然后到叶节点判断sum
 113.路径总和II|Medium|$O(n)$|二叉树、迭代、递归、树的遍历|No|主要是递归和迭代的套路是啥
 114.二叉树展开为链表|Meidum|$O(n)$|二叉树、链表、DFS|No|关键是如何原地修改
@@ -102,7 +103,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 152.乘积最大子序列|Medium|$O(n^3)$|数组|No|$fmax(i) = max(fmax(i-1)*num[i], fmin(i-1)*num[i], num[i]),fmin(i) = min(fmax(i-1)*num[i], min(i-1)*num[i], num[i])$
 153.寻找旋转排序数组中的最小值|Medium|$O(logn)$|数组，二分查找|No|mid和right比较，截止条件是left<right
 154.寻找旋转排序数组中的最小值 II|Hard|$O(logn)$|数组、二分查找|Done|和上述类似，只需考虑重复值
-155.最小栈|Easy|$O(1)$|栈|Done|建立辅助栈,每次保存新元素和已知元素
+155.最小栈|Easy|$O(1)$|栈|Done|建立辅助栈,push的时候和最小栈的栈顶元素比，决定哪个元素入栈
 160.相交链表|Easy|$O(m+n)$|链表|Done|长链表先走，然后再一起走
 167.两数之和 II-输入有序数组|Easy|$O(n)$|数组、双指针、二分查找|Done|双指针，前后遍历
 169.求众数|Easy|$O(n)$|数组、哈希表|Done|哈希表(统计次数)
@@ -136,7 +137,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 236.二叉树的最低公共祖先|Medium|$O(n)$|二叉树，dfs|No|求以node为根结点的子树是否出现过两个结点
 237.删除链表中的结点|Easy|$O(1)$|链表|Done|鬼题目，只需分别对val和next赋值
 238.除自身以外数组的乘积|Medium|$O(n)$|数组|Done|左右分别累乘，注意边界值
-239.滑动窗口最大值|Hard|$O(n)$|数组、堆、队列|No|最优解不会
+239.滑动窗口最大值|Hard|$O(kn)$|数组、堆、队列|Done|最优解不会
 240.搜索二维矩阵II|Medium|$O(m+n)$|数组、二分查找|Done|从左上遍历到右下
 242.有效的字母异位词|Easy|$O(n)$|哈希表|Done|Counter统计每个字符的次数
 260.只出现一次的数字III|Medium|$O(n)$|数组、哈希表|Done|我佛
@@ -157,6 +158,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 334.递增的三元子序列|Medium|$O(n)$|数组|Done|三元组判断
 337.打家劫舍III|Medium|  |动态规划、二叉树|No|一个二元数组代表是否包含根节点
 338.比特位计数|Medium|$O(32n)$|二进制|Done|和191类似，无差别
+343.整数拆分|Medium|$O(1)$|数组、DP|No|找规律
 344.反转字符串|Easy|$O(n)$|字符串|Done|原地翻转
 347.前 K 个高频元素|Medium|$O(n)$|堆、哈希表|No|和215类似，但需要注意更多的地方
 350.两个数组的交集II|Easy|$O(m,n)$|数组、哈希表|Done|Counter转成字典判断，排序后比较

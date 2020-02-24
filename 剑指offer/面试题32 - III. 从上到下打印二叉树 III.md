@@ -29,20 +29,22 @@
 
 ```python
 class Solution:
-    def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
-        if not root:return None
-        res,queue = [],[root]
-        layer = 0
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        if not root:return []
+        queue = [root]
+        level = 0
+        res = []
         while queue:
             temp = []
             for _ in range(len(queue)):
                 node = queue.pop(0)
                 temp.append(node.val)
+                if node.left:queue.append(node.left)
                 if node.right:queue.append(node.right)
-                if node.left:queue.append(node.left)   
-            
-            if layer%2 == 0:res.append(temp[::-1])
-            else:res.append(temp)
-            layer += 1
+            if level%2 == 0:
+                res.append(temp)
+            else:
+                res.append(temp[::-1])
+            level += 1
         return res
 ```
