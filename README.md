@@ -6,6 +6,10 @@ leetcode中文网：https://leetcode-cn.com/
 leetcode英文网：https://leetcode.com/   
 Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/    
 
+**关于Python的详细题解记录在[github](https://github.com/linxid/Leetcode_Python)，有兴趣的小伙伴可以关注下。**
+![image.png](https://pic.leetcode-cn.com/8582136a33cde7cd29627e03daf10eb98dd4cbb9c33f209d37e66edbaf128b31-image.png)
+
+
 ### 刷题记录：
 题目|难度|时间复杂度|类型|完成度|方法
 --|--|--|--|--|--
@@ -79,7 +83,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 105.从前序与中序遍历序列构造二叉树|Medium|$O(n)$|二叉树、递归，DFS|Done|先获取根结点，然后对左右子树递归调用
 106.从中序与后序遍历序列构造二叉树|Medium|$O(n)$|二叉树、递归，DFS|Done|同上，主要是中序遍历和后序遍历的识别
 108.将有序数组转换为二叉搜索树|Medium|$O(n)$|二叉树、递归|Done|先得到根节点，然后左右子树遍历生成
-110.平衡二叉树|Easy|$O(n^2)$|二叉树、递归，DFS|Done|判断每个结点左右子树的深度差是否小于1
+110.平衡二叉树|Easy|$O(n^2)$|二叉树、递归，DFS|No|判断每个结点左右子树的深度差是否小于1
 111.二叉树的最小深度|Easy|$O(n)$|二叉树、迭代、BFS|Done|类似分层遍历，左右子树均不存在时返回树深
 112.路径总和|Easy|$O(n)$|二叉树、迭代、递归|No|遍历每一个结点，然后到叶节点判断sum
 113.路径总和II|Medium|$O(n)$|二叉树、迭代、递归、树的遍历|No|主要是递归和迭代的套路是啥
@@ -106,12 +110,13 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 155.最小栈|Easy|$O(1)$|栈|Done|建立辅助栈,push的时候和最小栈的栈顶元素比，决定哪个元素入栈
 160.相交链表|Easy|$O(m+n)$|链表|Done|长链表先走，然后再一起走
 167.两数之和 II-输入有序数组|Easy|$O(n)$|数组、双指针、二分查找|Done|双指针，前后遍历
-169.求众数|Easy|$O(n)$|数组、哈希表|Done|哈希表(统计次数)
+169.求众数|Easy|$O(n)$|数组、哈希表|Done|哈希表(统计次数)，排序返回中间元素
 171.Excel表列序号|Easy|$O(n)$|数学|Done|模拟进制转换
 172.阶乘后的零|Easy|$O(logn)$|数学|No|求每一部分因子为5的个数
 179.最大数|Medium||数组、排序|No|关键是排序规则书写，熟悉key和cmp_to_key
 189.旋转数组|Easy|$O(1)$|数组|Done|注意原地操作
-191.位1的个数|Easy|$O(n)$|位运算|Done|统计1的个数即可
+190.点到二进制位|Easy|$O(n)$|位运算|Done|转换成二进制，zfill0填充，字符串翻转
+191.位1的个数|Easy|$O(n)$|位运算|Done|转换成二进制，统计1的个数即可
 198.打家劫舍|Easy|$O(n)$|动态规划|No|$f(n) = max(f(n-1), f(n-2)+nums[n])$
 200.岛屿数量|Medium|$O(mn)$|dfs|No|遍历每一个点，令1周围的1都变成0
 201.数字范围按位与|Easy|$O(n)$|位运算|No|发现二进制的规律
@@ -130,7 +135,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 226.翻转二叉树|Easy|$O(n)$|二叉树、递归|Done|交换左右子树，然后对左右子树递归   
 229.求众数II|Medium|$O(n)$|数组、排序、哈希表|Done|哈希表统计次数
 230.二叉搜索树中第k小的元素|Medium|$O(n)$|二叉树、dfs|Done|中序遍历，得到排序数组
-231.2的幂|Easy|$log(n)$|数学|Done|依次除以2，直到不能整除，判断最后是否是1
+231.2的幂|Easy|$log(n)$|数学|Done|依次除以2，直到不能整除，判断最后是否是1；二进制1的个数
 232.用栈实现队列|Easy|O(n)|栈、队列|Done|建立一个辅助栈，stack2为空后将stack1的放进去
 234.回文链表|Easy|$O(n)$|链表、指针|Done|转成数组然后判断是否是回文数组
 235.二叉搜索树的最低公共祖先|Easy|$O(n)$|二叉树、dfs|No|判断p，q是否在根节点和左右子树出现过
@@ -169,6 +174,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 394.字符串解码|Medium|$O(n)$|栈|No|‘[’：括号外的字符串和出现次数入栈，']'：括号内的字符串出栈
 395.至少有k个重复字符的最长子串|Medium|  |递归、分治|No|对原始字符串进行拆解，然后递归调用
 399.除法求值|Medium|$O(n)$|图、DFS|No|转换成图，然后利用图结构求解
+401.二进制手表|Easy|$O(1)$|数位运算|No|遍历所有的时间组合，然后求1的个数
 406.根据身高重建队列|Medium|$O(nlogn)$|数组、排序|No|对身高降序排序，人数升序排序
 410.分割数组的最大值|Hard|$O(nlog(sum/k))$|二分查找、贪心|No|遍历值，判断和是否存在
 412.Fizz Buzz|Easy|$O(n)$|数学|Done|直接遍历
@@ -187,6 +193,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 538.把二叉搜索树转换为累加树|Medium|  |二叉树、递归|No|反向中序遍历，先右子树，然后根节点累加，然后左子树
 543.二叉树的直径|Easy|$O(n)$|二叉树、DFS|No|和求树的深度一样，路径为L+R+1
 557.翻转字符串中的单词III|Easy|$O(n)$|字符串|Done|空格划分，然后单词内翻转
+559.N叉树的最大深度|Easy|$O(n)$|二叉树|Done|类似普通二叉树的遍历，注意max的list不能为空
 560.和为K的子数组|Medium|$O(n)$|哈希表、数组|No|保存累积求和出现的次数
 581.最短无序连续子数组|Easy|$O(nlogn)$|数组、排序、栈|Done|先排序，然后比较不同元素的索引
 617.合并二叉树|Easy|$O(n)$|二叉树、递归|Done|对每个子节点递归，判断根节点是否为空
