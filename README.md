@@ -104,6 +104,7 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 145.二叉树的后序遍历|Medium|$O(n)$|二叉树、DFS|Done|递归遍历，左右跟结点
 146.LRU缓存机制|Medium|$O(1)$|哈希表|No|使用有序字典来实现
 148.排序链表|Medium|$O(nlogn)$|链表、排序|Done|先放在一个数组里面排序，然后重新生成链表
+151.翻转字符串里的单词|Medium|$O(n)$|字符串|Done|split，拆分，倒序，拼接
 152.乘积最大子序列|Medium|$O(n^3)$|数组|No|$fmax(i) = max(fmax(i-1)*num[i], fmin(i-1)*num[i], num[i]),fmin(i) = min(fmax(i-1)*num[i], min(i-1)*num[i], num[i])$
 153.寻找旋转排序数组中的最小值|Medium|$O(logn)$|数组，二分查找|No|mid和right比较，截止条件是left<right
 154.寻找旋转排序数组中的最小值 II|Hard|$O(logn)$|数组、二分查找|Done|和上述类似，只需考虑重复值
@@ -206,3 +207,4 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 746.使用最小花费爬楼梯|Easy|$O(n)$|DP|Done|dp[i] = min(dp[i-1],dp[i-2]) + cost[i]
 876.链表的中间结点|Easy|$O(n)$|链表，双指针|Done|快慢指针
 1047.删除字符串中的所有相邻重复项|Medium|$O(n)$|栈、字符串|Done|新元素和栈顶元素比较
+1103.分糖果II|Easy|$O(max(G,N))$|数组|Done|依次添加新元素
