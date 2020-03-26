@@ -147,6 +147,8 @@ Top100常见题：https://leetcode.com/problemset/top-100-liked-questions/
 240.搜索二维矩阵II|Medium|$O(m+n)$|数组、二分查找|Done|从左上遍历到右下
 242.有效的字母异位词|Easy|$O(n)$|哈希表|Done|Counter统计每个字符的次数
 260.只出现一次的数字III|Medium|$O(n)$|数组、哈希表|Done|我佛
+263.丑数I|Easy| |数学|Done|while不停判断是否有2，3，5因子，是否为1
+264.丑数II|Medium|$O(1)$|数组、DP|No|`dp[i] = min(2*dp[p2],3*dp[p3],5*dp[p5])`
 268.缺失数字|Easy|$O(n)$|数学|Done|公式求解
 279.完全平方数|Medium|$O(n)$|数学、DP|No|动态规划超时，数学方法最优
 283.移动零|Easy|$O(n)$|数组、双指针|Done|移除0，然后append0
